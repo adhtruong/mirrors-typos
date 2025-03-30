@@ -1,0 +1,10 @@
+-   id: typos
+    name: typos
+    description: 'Source code spell checker, binary install'
+    entry: typos
+    language: python
+    'types': [text]
+    args: ["--write-changes", "--force-exclude"]
+    require_serial: false
+    additional_dependencies: []
+    minimum_pre_commit_version: '0'
