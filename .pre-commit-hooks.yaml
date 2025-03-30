@@ -1,0 +1,9 @@
+- id: typos
+  name: typos
+  language: rust
+  additional_dependencies:
+    - typos-cli:1.30.3
+  entry: typos
+  args: [--write-changes, --force-exclude]
+  types: [text]
+  stages: [pre-commit, pre-merge-commit, pre-push, manual]
