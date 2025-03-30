@@ -1,0 +1,32 @@
+name: main
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "15 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: pip install git+https://github.com/pre-commit/pre-commit-mirror-maker@v1.10.0
+      - run: git config --global user.name 'Github Actions'
+      - run: git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - run: |
+          pre-commit-mirror . \
+              --language=python \
+              --package-name=typos \
+              --id=typos \
+              --entry='typos' \
+              --description='Source code spell checker, binary install' \
+              --args='--write-changes,--force-exclude' \
+              --types=text
+      - run: |
+          git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
+          git push origin HEAD:refs/heads/main --tags v1.*
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
