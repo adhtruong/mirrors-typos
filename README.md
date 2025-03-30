@@ -12,7 +12,7 @@ See [here](https://github.com/crate-ci/typos/issues/390) for discussion in repo.
 
 ```yaml
 repos:
-  - repo: https://github.com/adhtruong/typos
+  - repo: https://github.com/adhtruong/mirrors-typos
     rev: v1.31.0
     hooks:
       - id: typos
