@@ -11,7 +11,7 @@ jobs:
     name: main
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
       - run: pip install git+https://github.com/pre-commit/pre-commit-mirror-maker@v1.10.0
       - run: git config --global user.name 'Github Actions'
