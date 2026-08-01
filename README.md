@@ -23,7 +23,7 @@ Add this to your `.pre-commit-config.yaml`:
 ```yaml
 repos:
   - repo: https://github.com/adhtruong/mirrors-typos
-    rev: v1.42.0  # Use the latest version from the releases page
+    rev: v1.48.0  # Use the latest version from the releases page
     hooks:
       - id: typos
 ```
