@@ -34,7 +34,7 @@ For additional configuration options, refer to the [typos documentation](https:/
 
 ## Differences from typos pre-commit
 
-- **Only binary installation**: Only the `typos` binary is supported (no additional stages configuration)
+- **Only binary installation**: Only the `typos` binary is supported
 - **Simplified hook configuration**: The `stages` parameter is not specified in the hook definition, as this is not supported by the mirror generation tool
 
 ## Maintenance
